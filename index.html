@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Te Amo - Celebração do Amor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        body {
+            background-color: #000; /* Fundo preto */
+            color: #fff; /* Cor do texto */
+            font-family: 'Dancing Script', cursive; /* Fonte estilizada */
+            margin: 0;
+            padding: 0;
+            display: flex; /* Usar flexbox para layout */
+            flex-direction: column; /* Direção da coluna */
+            align-items: center; /* Centraliza itens */
+            padding: 20px; /* Espaçamento ao redor */
+            overflow-x: hidden; /* Evita rolagem horizontal */
+        }
+
+        header {
+            text-align: center;
+            padding: 30px;
+            border-bottom: 5px solid #ff0000; /* Borda vermelha */
+            width: 100%; /* Largura total */
+        }
+
+        h1 {
+            font-size: 4em; /* Tamanho do título */
+            margin: 0;
+            color: #ff0000; /* Cor do título vermelho */
+            text-shadow: 2px 2px 4px rgba(255, 0, 0, 0.7); /* Sombra do título */
+        }
+
+        h2 {
+            font-size: 2.5em; /* Tamanho das subtítulos */
+            color: #ff4040; /* Cor dos subtítulos */
+            margin: 20px 0; /* Margem vertical */
+        }
+
+        .container {
+            max-width: 1200px; /* Largura máxima */
+            margin: auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1); /* Fundo semitransparente */
+            border-radius: 10px; /* Cantos arredondados */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra */
+            display: flex; /* Usar flexbox para layout interno */
+            flex-direction: row; /* Direção horizontal */
+            justify-content: space-between; /* Espaçamento entre itens */
+            gap: 40px; /* Espaço entre as colunas */
+            margin-top: 20px; /* Espaçamento superior */
+            flex-wrap: wrap; /* Permite que os itens se movam para a linha seguinte em telas menores */
+        }
+
+        .text-section {
+            flex: 2; /* Ocupa mais espaço */
+            margin-right: 20px; /* Espaçamento entre a música e o texto */
+            min-width: 300px; /* Largura mínima para manter o layout */
+        }
+
+        iframe {
+            flex: 1; /* Ocupa espaço igual */
+            height: 352px; /* Altura fixa */
+            border-radius: 12px; /* Cantos arredondados */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra */
+            min-width: 300px; /* Largura mínima para manter o layout */
+        }
+
+        #video-container {
+            margin-top: 20px; /* Margem superior para o vídeo */
+            width: 100%; /* Largura total */
+            display: flex; /* Usar flexbox para centralizar */
+            justify-content: center; /* Centraliza o vídeo */
+        }
+
+        #counter-container {
+            margin-top: 20px; /* Margem superior */
+        }
+
+        #counter {
+            font-size: 80px; /* Tamanho do contador */
+            color: #ff0000; /* Cor do contador vermelho */
+            background: rgba(255, 255, 255, 0.2); /* Fundo semitransparente */
+            padding: 20px; /* Padding interno */
+            border-radius: 50px; /* Cantos arredondados */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra */
+            position: relative;
+            z-index: 1; /* Z-index para sobreposição */
+        }
+
+        #together {
+            font-size: 30px; /* Tamanho do texto "Juntos a..." */
+            margin: 10px 0; /* Margem vertical */
+            color: #ff4040; /* Cor do texto vermelho */
+        }
+
+        footer {
+            text-align: center; /* Centraliza o texto */
+            padding: 20px; /* Padding interno */
+            background: #333; /* Cor de fundo */
+            margin-top: 20px; /* Margem superior */
+            width: 100%; /* Largura total */
+        }
+
+        .quote {
+            font-size: 24px; /* Tamanho das citações */
+            font-style: italic; /* Estilo em itálico */
+            color: #ff4040; /* Cor das citações vermelhas */
+            margin: 20px 0; /* Margem vertical */
+            text-align: center; /* Centraliza o texto */
+        }
+
+        .love-letter {
+            font-size: 22px; /* Tamanho do texto da declaração */
+            color: #ff4040; /* Cor do texto vermelho */
+            margin: 20px 0; /* Margem vertical */
+            line-height: 1.5; /* Altura da linha */
+        }
+
+        /* Estilos responsivos */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3em; /* Reduz o tamanho do título */
+            }
+
+            h2 {
+                font-size: 2em; /* Reduz o tamanho das subtítulos */
+            }
+
+            #counter {
+                font-size: 40px; /* Reduz o tamanho do contador em telas menores */
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.5em; /* Reduz ainda mais o título */
+            }
+
+            h2 {
+                font-size: 1.5em; /* Reduz ainda mais os subtítulos */
+            }
+
+            .quote {
+                font-size: 20px; /* Reduz o tamanho das citações */
+            }
+
+            .love-letter {
+                font-size: 18px; /* Reduz o tamanho da declaração */
+            }
+        }
+    </style>
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="link-da-sua-musica.mp3" type="audio/mpeg"> <!-- Coloque o link do seu áudio aqui -->
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+
+    <header>
+        <h1>Te Amo</h1>
+        <p>Uma celebração do amor e da união</p>
+    </header>
+
+    <div class="container">
+        <div class="text-section">
+            <div id="together">Juntos a...</div>
+            <div id="counter-container">
+                <div id="counter">0 anos, 0 meses, 0 dias, 0 horas, 0 minutos e 0 segundos</div>
+            </div>
+
+            <h2>Poesias e Citações</h2>
+            <article>
+                <h3>Poesia do Amor</h3>
+                <p>O amor é como um sonho,<br>
+                   Um doce e suave encanto,<br>
+                   Dois corações entrelaçados,<br>
+                   Juntos, dançando no manto.</p>
+                <div class="quote">"O amor é a poesia dos sentidos." – Honoré de Balzac</div>
+            </article>
+
+            <h2>Frases Românticas</h2>
+            <p class="quote">"Amar não é só querer, é entender."</p>
+            <p class="quote">"Você é a razão do meu sorriso."</p>
+            <p class="quote">"Em cada olhar, um sonho; em cada toque, um mundo."</p>
+            
+            <h2>Declaração de Amor</h2>
+            <p class="love-letter">Carla,<br>
+            Desde o dia em que nossos caminhos se cruzaram, minha vida ganhou um novo significado. Você não é apenas a luz que ilumina meus dias, mas também a força que me impulsiona a ser uma versão melhor de mim mesmo. Cada momento ao seu lado é um tesouro que guardo com carinho, e a cada sorriso seu, meu coração se enche de uma alegria indescritível.</p>
+            
+            <p class="love-letter">Quando olho para você, vejo não apenas a mulher que amo, mas também a minha melhor amiga, a confidente que sempre esteve ao meu lado. Em cada riso compartilhado, em cada lágrima enxugada, construímos um amor forte e inquebrável.</p>
+
+            <p class="love-letter">Nossos anos juntos têm sido repletos de aventuras e descobertas. Cada viagem, cada conversa sob as estrelas, e até mesmo os momentos mais simples, como cozinhar juntos ou assistir a um filme no sofá, têm construído um lindo mosaico de memórias que aquecem minha alma.</p>
+
+            <p class="love-letter">Carla, eu te amo profundamente e de forma incondicional. Você é a razão pela qual meu coração bate com tanta força. Que possamos continuar escrevendo juntos essa linda história, cheia de amor, risos e momentos inesquecíveis. Agradeço a você por ser quem você é e por me permitir ser parte da sua vida.</p>
+        </div>
+        <iframe src="https://open.spotify.com/embed/track/7LC49U08KjfwzDMiGNkE1q?utm_source=generator&theme=0" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" frameborder="0"></iframe>
+    </div>
+
+    <!-- Adicionando o vídeo -->
+    <div id="video-container">
+        <iframe width="560" height="315" src="v ‐ Feito com o Clipchamp.mp4" 
+            title="Vídeo do Amor" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen></iframe>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Te Amo. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        const startDate = new Date("2022-04-01T00:00:00-03:00");
+
+        function calculateTimeDifference() {
+            const now = new Date();
+            let totalDiff = now - startDate;
+
+            // Calculando os anos
+            const years = now.getFullYear() - startDate.getFullYear();
+            let months = now.getMonth() - startDate.getMonth();
+            let days = now.getDate() - startDate.getDate();
+
+            // Ajustando os meses e dias
+            if (days < 0) {
+                months--;
+                const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+                days += prevMonth.getDate();
+            }
+            if (months < 0) {
+                months += 12;
+            }
+
+            // Calculando horas, minutos e segundos
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
+
+            // Atualizando o contador
+            document.getElementById("counter").innerText = 
+                `${years} anos, ${months} meses, ${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos`;
+        }
+
+        setInterval(calculateTimeDifference, 1000); // Atualiza a cada segundo
+    </script>
+</body>
+</html>
